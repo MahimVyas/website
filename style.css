@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    overflow-x: hidden;
+    font-family: 'Fredoka', sans-serif;
+    /* background: conic-gradient(rgb(255, 255, 255), skyblue, skyblue); */
+    background-image: url('https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80&w=3871&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: black;
+    height: 100%; /* Make sure the body and html take full height */
+    margin: 0; /* Remove default margins */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Set column direction to stack content vertically */
+}
+
+p {
+    font-family: 'Playwrite DE Grund', serif;
+    font-weight: 300;
+}
+
+.main-header {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    justify-content:space-evenly;
+}
+
+.main-title {
+    font-family: fantasy;
+    font-weight: 800;
+    background-color: white;
+    color: black;
+    font-size: 1.5em;
+    margin: 10px;
+    align-items: center;
+}
+
+.page-title {
+    color: white;
+    position: fixed;
+    background-color: rgb(0, 145, 255);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    border-style: none;
+    z-index: 1000;
+    animation: title-button-animation 0.5s ease forwards;
+}
+/* .page-title:hover {
+    color: rgba(255, 1, 132);
+    background-color: white;
+}
+.page-title:active {
+    transform: scale(0.9);
+} */
+
+.nav-link-container {
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 5px;
+    justify-items: center;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    transition: all 0.1s ease-in-out;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+    color: rgba(255, 1, 132);
+}
+.nav-link::after {
+    transform: scale(1.05);
+    text-decoration: underline;
+    color: rgba(255, 1, 132);
+}
+
+.main-content {
+    max-width: 50%;
+    margin: auto;
+    padding: 10px;
+    backdrop-filter: blur(100px);
+    background-color: rgba(255,255,255, 0.1);
+    border-radius: 10px;
+    animation: grow 1s ease-out forwards;
+    margin-bottom: auto;
+    transition: all 0.1s ease-in-out;
+    color: white;
+    
+}
+
+.main-content:hover {
+    color: black;
+    background-color: rgba(255,255,255, 0.05);
+}
+
+.content {
+    justify-content: space-around;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+.footer-feedback {
+    display: flex;
+}
+
+.image {
+    display: block;
+    width: 85%;
+    height: auto; 
+    object-fit: cover;
+    margin: 15px;
+}
+
+.download-content-1 , .download-content-2 {
+    padding: 10px;
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    width: 70%; /* Set a width for the download content */
+    margin: 20px auto; /* Center it horizontally */
+    transform: translateY(50%); /* Optional animation */
+    opacity: 0; /* Initially hidden */
+    animation: grow 0.4s ease-out forwards;
+}
+
+.grid-container-1 , .grid-container-2 {
+    margin: 0 auto;
+    max-width: 70%;
+    overflow-x: hidden;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat( 3, 2fr); 
+    gap: 20px;
+}
+
+.image-container-1, .image-container-2 {
+    background-color: rgba(255,255,255, 0.1);
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.image-container img {
+    width: 200px;
+    height: auto;
+}
+
+/* @media (max-width: 600px) {
+    .grid-container-1 , .grid-container-2 {
+        grid-template-columns: 1fr; 
+    }
+    * {
+        margin: 5%;
+    }
+}
+
+@media (max-width: 800px) {
+    .grid-container-1 , .grid-container-2 {
+        grid-template-columns: 2fr;
+    }
+    * {
+        margin: 5%;
+    }
+
+} */
+
+.main-footer {
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    flex: 1; 
+    padding: 20px;
+    gap: 25px;
+}
+.download-help ,.next-alert {
+    margin: auto;
+    background-color: rgb(255,255,255,0.7);
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    max-width: 70%;
+}
+
+@keyframes grow {
+    from {
+        transform: translateZ(100%);
+        opacity: 0; 
+        transform: scale(2);
+        backdrop-filter: blur(0px);
+    }
+    to {
+        transform: scale(1);
+        transform: translateZ(0); 
+        opacity: 1; 
+        backdrop-filter: blur(50px);
+    }
+}
+@keyframes title-button-animation {
+    from {
+        translate: 1000%;
+        opacity: 0;
+    }
+    to {
+        translate: 0%; 
+        opacity: 1; 
+    }
+}
+
+.main-content {
+    max-width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 10px;
+    backdrop-filter: blur(15px);
+    background-color: rgba(255,255,255, 0.1);
+    border-radius: 10px;
+    transform: translateY(100%);
+    opacity: 0; 
+    animation: grow 0.4s ease-out forwards; 
+    margin-bottom: auto;
+}
+
+.footer {
+    margin-top: 5%;
+    margin-bottom: 0;
+    bottom: 0;
+    background-color: rgb(25, 24, 24); 
+    padding: 10px; 
+    text-align: center; 
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 10; 
+    width: 100%;
+    color: black;
+    padding: 5px; 
+    text-align: center; 
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    font-size: small;
+}
+.footer-main-content {
+    flex-direction: column;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.footer-feedback {
+    color: white;
+    flex-direction: column;
+}
+.footer-links {
+    text-decoration: none;
+    color: rgb(0, 132, 255);
+    transition: all 0.2s ease-in-out;
+}
+
+.footer-links:hover {
+    text-decoration: underline;
+    color: rgb(255, 60, 161);
+}
+
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.image-container {
+    background-color: rgba(255,255,255, 0.1);
+    height: fit-content;
+    border-radius: 10px;
+    text-align: center; 
+}
+
+.image-container img {
+    width: 100%; 
+    height: auto; 
+}
+
+@media (max-width: 800px) {
+    .wallpaper-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+.content-title {
+    color: white;
+}
